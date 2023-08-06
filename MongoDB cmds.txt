@@ -1,0 +1,14 @@
+>db.createCollection('mugunth')
+>db.createCollection('Random')
+>show dbs
+>show collections
+>db.Random.drop()
+>show collections
+>db.mugunth.insertOne({"Name" : "Mugunth", "Age" : 20, "Address" : { "DoorNo" : 20, "Street" : "gk colony", "City" : "Chennai", "State" : "TamilNadu", "Pincode" : 600100 }, "College" : "Sathyabama"})
+>db.mugunth.insertMany([{"Name" : "Yogesh", "Age" : 20, "Address" : { "DoorNo" : 32, "Street" : "pillaiyar kovil street", "City" : "Chennai", "State" : "Tamilnadu", "Pincode" : 600083 }, "College" : "Sathyabama"},{ "Name" : "Bala", "Age" : 20, "Address" : { "DoorNo" : 05, "Street" : "jayaram street", "City" : "Chennai", "State" : "TamilNadu", "Pincode" : 600041 }, "College" : "Sathyabama"},{ "Name" : "Kishan", "Age" : 19, "Address" : { "DoorNo" : 18, "Street" : "deepika colony", "City" : "Chennai", "State" : "TamilNadu", "Pincode" : 600119 }, "College" : "Sathyabama"},{"Name" : "Eswar", "Age" : 20, "Address" : { "DoorNo" : 10, "Street" : "rk colony", "City" : "Chennai", "State" : "TamilNadu", "Pincode" : 600119 }, "College" : "Sathyabama"}])
+>db.mugunth.find().pretty()
+>db.mugunth.find({Age:{$lte:19}})
+>db.mugunth.find({Age:{$lte:19}},{Name:1,Age:1,_id:0})
+>db.mugunth.find({Age:{$gte:20}},{Name:1,Age:1,_id:0})
+>db.mugunth.updateOne({'Name':'Eswar'},{$set:{'Name':'Abdul'}})
+>db.mugunth.remove({'Name' : 'Bala'})
